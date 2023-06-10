@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+<style>
+    body {
+        background-color: #E4F9F5;
+    }
+
+    h2 {
+        font-family: Arial, sans-serif;
+    }
+
+    form {
+        width: 300px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #FFFFFF;
+        border: 1px solid #CCCCCC;
+        border-radius: 5px;
+    }
+
+    label {
+        display: block;
+        font-family: Arial, sans-serif;
+        margin-bottom: 5px;
+    }
+
+    input[type="email"],
+    input[type="text"] {
+        width: 100%;
+        padding: 5px;
+        margin-bottom: 10px;
+        border: 1px solid #CCCCCC;
+        border-radius: 3px;
+    }
+
+    button {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        background-color: #30E3CA;
+        border: none;
+        border-radius: 3px;
+        color: #FFFFFF;
+        font-family: Arial, sans-serif;
+        cursor: pointer;
+    }
+
+    p.error {
+        font-family: Arial, sans-serif;
+        color: red;
+        margin-top: 10px;
+    }
+</style>
+
+<form action="/login" method="post">
+    <div>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+    </div>
+    <div>
+        <label for="nif">NIF:</label>
+        <input type="text" id="nif" name="nif" required>
+    </div>
+    <div>
+        <button type="submit">Entrar</button>
+    </div>
+</form>
+<p class="error" th:text="${error}" th:if="${error}"></p>
+
+<script th:inline="javascript">
+    /* Verifica se a mensagem de erro está presente e exibe um alerta */
+    var error = [[${error}]];
+    if (error) {
+        alert(error);
+    }
+</script>
+
+</body>
+</html>
