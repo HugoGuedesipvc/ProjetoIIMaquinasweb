@@ -7,10 +7,18 @@
       background-color: #E4F9F5;
     }
 
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
     table {
       border-collapse: separate;
       border-spacing: 0;
-      width: 100%;
+      width: 80%;
+      max-width: 600px;
       border: 1px solid #30E3CA;
       border-radius: 10px;
       overflow: hidden;
@@ -53,27 +61,29 @@
   </style>
 </head>
 <body>
-<table>
-  <thead>
-  <tr>
-    <th>ID Reposicao</th>
-    <th>ID Maquina</th>
-    <th>Data Pre-Reposicao</th>
-    <th>Data Efetiva de Reposicao</th>
-    <th>Descricao</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr>
-    <td>1</td>
-    <td>1</td>
-    <td>2023-06-01</td>
-    <td>2023-06-02</td>
-    <td>Descricao da reposicao</td>
-  </tr>
-  <!-- Adicione mais linhas para cada objeto Reposicao_Maquinas -->
-  </tbody>
-</table>
+<div class="container">
+  <table>
+    <thead>
+    <tr>
+      <th>ID Reposicao</th>
+      <th>ID Maquina</th>
+      <th>Data Pre-Reposicao</th>
+      <th>Data Efetiva de Reposicao</th>
+      <th>Descricao</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>1</td>
+      <td>1</td>
+      <td>2023-06-01</td>
+      <td>2023-06-02</td>
+      <td>Descricao da reposicao</td>
+    </tr>
+    <!-- Adicione mais linhas para cada objeto Reposicao_Maquinas -->
+    </tbody>
+  </table>
+</div>
 </body>
 </html>
 
