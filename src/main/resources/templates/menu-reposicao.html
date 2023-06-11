@@ -1,16 +1,60 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>Menu de Reposição</title>
+  <title>Tabela de Reposição de Máquinas</title>
+  <style>
+    body {
+      background-color: #E4F9F5;
+    }
+
+    table {
+      border-collapse: separate;
+      border-spacing: 0;
+      width: 100%;
+    }
+
+    th, td {
+      padding: 8px;
+      text-align: left;
+      border-bottom: 1px solid #30E3CA;
+      border-right: 1px solid #30E3CA;
+    }
+
+    th:first-child, td:first-child {
+      border-top-left-radius: 10px;
+      border-bottom-left-radius: 10px;
+      border-left: none;
+    }
+
+    th:last-child, td:last-child {
+      border-top-right-radius: 10px;
+      border-bottom-right-radius: 10px;
+      border-right: none;
+    }
+  </style>
 </head>
 <body>
-<h2>Menu de Reposição</h2>
-<p>Selecione uma opção:</p>
-<ul>
-  <li><a href="/repor-produto">Repor Produto</a></li>
-  <li><a href="/repor-dinheiro">Repor Dinheiro</a></li>
-  <li><a href="/repor-troco">Repor Troco</a></li>
-</ul>
+<table>
+  <thead>
+  <tr>
+    <th>ID Reposicao</th>
+    <th>ID Maquina</th>
+    <th>Data Pre-Reposicao</th>
+    <th>Data Efetiva de Reposicao</th>
+    <th>Descricao</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td>1</td>
+    <td>1</td>
+    <td>2023-06-01</td>
+    <td>2023-06-02</td>
+    <td>Descricao da reposicao</td>
+  </tr>
+  <!-- Adicione mais linhas para cada objeto Reposicao_Maquinas -->
+  </tbody>
+</table>
 </body>
 </html>
+
