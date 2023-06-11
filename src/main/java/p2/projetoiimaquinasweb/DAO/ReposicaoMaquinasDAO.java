@@ -1,5 +1,6 @@
 package p2.projetoiimaquinasweb.DAO;
 
+import org.springframework.stereotype.Repository;
 import p2.projetoiimaquinasweb.Classes.Reposicao_Maquinas;
 
 import java.sql.Connection;
@@ -9,11 +10,10 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+@Repository
+public class ReposicaoMaquinasDAO {
 
-import static p2.projetoiimaquinasweb.Classes.SaveCentral.idCentral;
-
-public class Reposicao_MaquinasDAO {
-    public List<Reposicao_Maquinas> getReposicoesMaquinas() {
+    public List<Reposicao_Maquinas> getReposicoesMaquinasPorUtilizador(int idUtilizador) {
         List<Reposicao_Maquinas> reposicoesMaquinas = new ArrayList<>();
         Connection connection = null;
         PreparedStatement preparedStatement = null;
@@ -22,20 +22,19 @@ public class Reposicao_MaquinasDAO {
         try {
             connection = DBConnectionManager.getConnection();
 
-            // Consulta SQL para buscar as reposições de máquinas com o nome do utilizador
+            // Consulta SQL para buscar as reposições de máquinas com o ID do utilizador
             String sql = "SELECT rm.*, u.nome AS nome_utilizador " +
                     "FROM reposicoes_maquinas rm " +
                     "JOIN utilizadores u ON rm.id_utilizador = u.id_utilizador " +
-                    "WHERE u.id_central = ?";
+                    "WHERE rm.id_utilizador = ?";
             preparedStatement = connection.prepareStatement(sql);
-            preparedStatement.setInt(1, idCentral);
+            preparedStatement.setInt(1, idUtilizador);
             resultSet = preparedStatement.executeQuery();
 
             // Processar os resultados da consulta
             while (resultSet.next()) {
                 int idReposicaoM = resultSet.getInt("id_reposicao_m");
                 int idMaquina = resultSet.getInt("id_maquina");
-                int idUtilizador = resultSet.getInt("id_utilizador");
                 Date dataPreposicao = resultSet.getDate("data_preposicao");
                 String descricao = resultSet.getString("descricao");
                 Date dataEreposicao = resultSet.getDate("data_ereposicao");
@@ -73,6 +72,11 @@ public class Reposicao_MaquinasDAO {
         DBConnectionManager.closeConnection();
         return reposicoesMaquinas;
     }
+
+
+
+
+
 
 }
 

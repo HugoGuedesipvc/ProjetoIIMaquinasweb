@@ -6,9 +6,9 @@ public class Maquina {
     private int Maquina = 0;
     private String Descricao = null;
     private String Nome = null;
-    private String Tipo_Pagamento = null;
+    private int Tipo_Pagamento = 0;
     private String Modelo = null;
-    public Maquina(int Maquina, int ID_Central, String Descricao, String Nome, String Tipo_Pagamento, String Modelo){
+    public Maquina(int Maquina, int ID_Central, String Descricao, String Nome, int Tipo_Pagamento, String Modelo){
 
         this.Maquina = Maquina;
         this.Id_Central=ID_Central;
@@ -50,11 +50,11 @@ public class Maquina {
         Nome = nome;
     }
 
-    public String getTipo_Pagamento() {
+    public int getTipo_Pagamento() {
         return Tipo_Pagamento;
     }
 
-    public void setTipo_Pagamento(String tipo_Pagamento) {
+    public void setTipo_Pagamento(int tipo_Pagamento) {
         Tipo_Pagamento = tipo_Pagamento;
     }
 

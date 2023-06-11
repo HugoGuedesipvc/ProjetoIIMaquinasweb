@@ -62,27 +62,27 @@
 </head>
 <body>
 <div class="container">
-  <table>
-    <thead>
-    <tr>
-      <th>ID Reposicao</th>
-      <th>ID Maquina</th>
-      <th>Data Pre-Reposicao</th>
-      <th>Data Efetiva de Reposicao</th>
-      <th>Descricao</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-      <td>1</td>
-      <td>1</td>
-      <td>2023-06-01</td>
-      <td>2023-06-02</td>
-      <td>Descricao da reposicao</td>
-    </tr>
-    <!-- Adicione mais linhas para cada objeto Reposicao_Maquinas -->
-    </tbody>
-  </table>
+<table>
+  <thead>
+  <tr>
+    <th>ID Reposicao</th>
+    <th>ID Maquina</th>
+    <th>Data Pre-Reposicao</th>
+    <th>Data Efetiva de Reposicao</th>
+    <th>Descricao</th>
+  </tr>
+  </thead>
+  <tbody>
+  <!-- Use a sintaxe Thymeleaf para iterar sobre a lista de reposições de máquinas -->
+  <tr th:each="reposicao : ${reposicoesMaquinas}">
+    <td th:text="${reposicao.id_reposicao_M}"></td>
+    <td th:text="${reposicao.id_maquina}"></td>
+    <td th:text="${reposicao.data_preposicao}"></td>
+    <td th:text="${reposicao.data_ereposicao}"></td>
+    <td th:text="${reposicao.descricao}"></td>
+  </tr>
+  </tbody>
+</table>
 </div>
 </body>
 </html>

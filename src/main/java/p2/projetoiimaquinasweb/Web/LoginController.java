@@ -18,7 +18,7 @@ public class LoginController {
     @PostMapping("/login")
     public String processLogin(@RequestParam("email") String email, @RequestParam("nif") String nif, Model model) {
         Login.LoginUser(email, nif);
-
+        
         if (Login.getSessao() != null) {
             return "redirect:/menu-reposicao";
         } else {
