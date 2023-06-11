@@ -53,7 +53,6 @@ public class Login {
 
                     int centralId = SaveCentral.idCentral;
                     System.out.println("idCentral:  " + centralId);
-                    DBConnectionManager.closeConnection();
                 }
             }
         } catch (SQLException e) {
@@ -80,6 +79,7 @@ public class Login {
                     e.printStackTrace();
                 }
             }
+            DBConnectionManager.closeConnection();
         }
     }
 
