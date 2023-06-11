@@ -31,7 +31,7 @@ public class MaquinaDAO {
                 int idCentral = resultSet.getInt("id_central");
                 String descricao = resultSet.getString("descricao");
                 String nome = resultSet.getString("nome");
-                String tipoPagamento = resultSet.getString("tipo_pagamento");
+                int tipoPagamento = resultSet.getInt("tipo_pagamento");
                 String modelo = resultSet.getString("modelo");
 
                 Maquina maquinaObj = new Maquina(maquina, idCentral, descricao, nome, tipoPagamento, modelo);

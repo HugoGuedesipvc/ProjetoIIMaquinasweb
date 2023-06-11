@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Tabela de Reposição de Máquinas</title>
+  <title>Tabela de Reposição de Máquinas e Máquinas</title>
   <style>
     body {
       background-color: #E4F9F5;
@@ -14,11 +14,14 @@
       height: 100vh;
     }
 
+    .table-wrapper {
+      margin-right: 20px;
+    }
+
     table {
       border-collapse: separate;
       border-spacing: 0;
-      width: 80%;
-      max-width: 600px;
+      width: 100%;
       border: 1px solid #30E3CA;
       border-radius: 10px;
       overflow: hidden;
@@ -32,7 +35,8 @@
     }
 
     th:first-child, td:first-child {
-      border-left: 1px solid #30E3CA;
+      border-left: none;
+      border-top-left-radius: 0;
     }
 
     th:last-child, td:last-child {
@@ -62,28 +66,54 @@
 </head>
 <body>
 <div class="container">
-<table>
-  <thead>
-  <tr>
-    <th>ID Reposicao</th>
-    <th>ID Maquina</th>
-    <th>Data Pre-Reposicao</th>
-    <th>Data Efetiva de Reposicao</th>
-    <th>Descricao</th>
-  </tr>
-  </thead>
-  <tbody>
-  <!-- Use a sintaxe Thymeleaf para iterar sobre a lista de reposições de máquinas -->
-  <tr th:each="reposicao : ${reposicoesMaquinas}">
-    <td th:text="${reposicao.id_reposicao_M}"></td>
-    <td th:text="${reposicao.id_maquina}"></td>
-    <td th:text="${reposicao.data_preposicao}"></td>
-    <td th:text="${reposicao.data_ereposicao}"></td>
-    <td th:text="${reposicao.descricao}"></td>
-  </tr>
-  </tbody>
-</table>
+  <div class="table-wrapper">
+    <table>
+      <thead>
+      <tr>
+        <th>ID Reposicao</th>
+        <th>ID Maquina</th>
+        <th>Data Pre-Reposicao</th>
+        <th>Data Efetiva de Reposicao</th>
+        <th>Descricao</th>
+      </tr>
+      </thead>
+      <tbody>
+      <!-- Use a sintaxe Thymeleaf para iterar sobre a lista de reposições de máquinas -->
+      <tr th:each="reposicao : ${reposicoesMaquinas}">
+        <td th:text="${reposicao.id_reposicao_M}"></td>
+        <td th:text="${reposicao.id_maquina}"></td>
+        <td th:text="${reposicao.data_preposicao}"></td>
+        <td th:text="${reposicao.data_ereposicao}"></td>
+        <td th:text="${reposicao.descricao}"></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="table-wrapper">
+    <table>
+      <thead>
+      <tr>
+        <th>ID Central</th>
+        <th>Maquina</th>
+        <th>Descricao</th>
+        <th>Nome</th>
+        <th>Tipo Pagamento</th>
+        <th>Modelo</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>1</td>
+        <td>1</td>
+        <td>Descricao da maquina</td>
+        <td>Nome da maquina</td>
+        <td>1</td>
+        <td>Modelo da maquina</td>
+      </tr>
+      <!-- Adicione mais linhas para cada objeto Maquina -->
+      </tbody>
+    </table>
+  </div>
 </div>
 </body>
 </html>
-
